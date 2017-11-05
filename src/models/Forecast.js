@@ -1,4 +1,4 @@
-export const Forecast = {
+/*export const Forecast = {
   name: 'Forecast',
   primaryKey: 'id',
   properties: {
@@ -14,6 +14,6 @@ export const Forecast = {
     avg_wind: 'float',
     pop: 'int',
     humidity: 'int',
-    type: 'string' /* used for icon */
+    type: 'string' // used for icon
   }
-};
+};*/

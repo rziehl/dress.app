@@ -14,8 +14,9 @@ import { connect } from 'react-redux';
 // --- APP INCLUDES ---
 
 import SectionDivider from '../components/lib/SectionDivider';
-import WeatherForecastContainer from './WeatherForecastContainer';
+import ForecastContainer from './ForecastContainer';
 import FitContainer from './FitContainer';
+import GeolocationContainer from './GeolocationContainer';
 
 class RootContainer extends Component {
   render(){
@@ -24,7 +25,7 @@ class RootContainer extends Component {
         <StatusBar barStyle="dark-content" backgroundColor={'rgba(255, 255, 255, 1.0)'} />
 
         <ScrollView>
-          <WeatherForecastContainer/>
+          { this.props.has_position ? <ForecastContainer/> : <GeolocationContainer/> }
           { this.props.show_add_fit ? <SectionDivider/> : undefined }
           { this.props.show_add_fit ? <FitContainer/> : undefined }
         </ScrollView>
@@ -36,7 +37,8 @@ class RootContainer extends Component {
 
 const mapStateToProps = (state, props) => {
   return {
-    show_add_fit: state.weather.form_for ? true : false,
+    has_position: state.geolocations.current ? true : false,
+    show_add_fit: state.forecasts.current ? true : false,
   };
 }
 

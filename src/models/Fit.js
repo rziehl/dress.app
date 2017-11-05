@@ -1,4 +1,4 @@
-export const Fit = {
+/*export const Fit = {
   name: 'Fit',
   properties: {
 
@@ -15,6 +15,6 @@ export const Fit = {
     footwear_id: { type: 'int', optional: true },
     belt_id: { type: 'int', optional: true }
   }
-};
+};*/
 
 // date:  'date',

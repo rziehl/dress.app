@@ -18,30 +18,32 @@ import Button from '../lib/Button';
 import Card from '../lib/Card';
 import CardItem from '../lib/CardItem';
 import SectionDivider from '../lib/SectionDivider';
+import ClothingItemRow from './ClothingItemRow';
 
-import { getClothingItems } from '../../state/ClothingItems';
-import { updateFitWith } from '../../state/Fits';
+import { setClothingFilter } from '../../actions/ClothingActions';
+import { addItemToFit } from '../../actions/FitActions';
+
+import * as ClothesUtil from '../../util/ClothesUtil';
+
+// TODO: this should be a container
+// TODO: this should use a proper listview for performance
+// TODO: this should allow for rows to deselected
+// TODO: ClothingItemRows should show some visual indication they are selected
 
 class FitItemSelectCard extends Component {
   render() {
-    const { dispatch } = this.props;
-
     let itemRows = this.props.clothes.map((clothing_item, index) => {
       return (
-        <TouchableOpacity onPress={updateFitWith(dispatch, clothing_item)} key={'clothing_item_' + index}>
-          <View style={styles.clothingItemRow}>
-            <Image source={{uri: clothing_item.thumbnail}} style={styles.avatar}/>
-            <View style={styles.clothingItemTextContainer}>
-              <Text style={styles.clothingItemText}>{clothing_item.name}</Text>
-              <View style={styles.descriptionContainer}>
-                <Text style={styles.descriptionText}>BY {clothing_item.brand.toUpperCase()}</Text>
-                <Text style={styles.descriptionText}>{clothing_item.color.toUpperCase()}</Text>
-              </View>
-            </View>
-          </View>
-        </TouchableOpacity>
+        <ClothingItemRow 
+          key={'clothing_item_row_' + index}
+          onPress={this.props.onItemPress.bind(this, clothing_item)}
+          clothing_item={clothing_item}
+          index={index}
+        />
       );
     });
+
+    // TODO: textContainer and sectionHeaderContainer can be combined
 
     return (
       <Card>
@@ -56,56 +58,37 @@ class FitItemSelectCard extends Component {
         </CardItem>
 
         <CardItem>
-          <Button text='BACK' style={styles.backButton} onPress={getClothingItems(dispatch)}/>
+          <Button text='BACK' style={styles.backButton} onPress={this.props.onBackPress}/>
         </CardItem>
       </Card>
     );
   }
 }
 
+function filterClothes(clothes, category) {
+  return clothes.filter((item) => {
+    return ClothesUtil.typeToCategory(item.type) === category
+  });
+}
+
 const mapStateToProps = (state, props) => {
   return {
-    clothes: state.clothing.clothes,
+    clothes: filterClothes(state.clothes.items, state.clothes.filter),
   }
 }
 
-export default connect(mapStateToProps)(FitItemSelectCard);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onItemPress: (item) => { dispatch(addItemToFit(item)) },
+    onBackPress: () => { dispatch(setClothingFilter(undefined)) }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FitItemSelectCard);
 
 const styles = StyleSheet.create({
-  avatar: {
-    width: 48,
-    height: 48,
-    borderRadius: 24,
-    marginRight: 16
-  },
   backButton: {
     backgroundColor: 'rgba(232, 235, 239, 1.0)',
-  },
-  clothingItemTextContainer: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center'
-  },
-  clothingItemText: {
-    fontFamily: 'abel_regular',
-    fontSize: 17,
-    color: 'rgba(69, 196, 156, 1.0)',
-  },
-  clothingItemRow: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    paddingVertical: 4
-  },
-  descriptionContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between'
-  },
-  descriptionText: {
-    color: 'rgba(177, 191, 196, 1.0)',
-    fontFamily: 'abel_regular',
-    fontSize: 13,
   },
   headerText: {
     marginTop: -8,

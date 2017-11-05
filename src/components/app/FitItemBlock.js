@@ -9,10 +9,6 @@ import {
   View
 } from 'react-native';
 
-// --- APP INCLUDES ---
-
-import CardItem from '../lib/CardItem';
-
 export default class FitItemBlock extends Component {
   render() {
     return (

@@ -6,20 +6,31 @@ import {
   AppRegistry,
 } from 'react-native';
 
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import thunkMiddleware from 'redux-thunk';
+import { createLogger } from 'redux-logger';
 
-import { AppState } from './src/state/AppState';
+import Clothes from './src/data/Clothes';
+import { AppState } from './src/reducers/AppState';
+import { setClothingItems } from './src/actions/ClothingActions';
 
 import RootContainer from './src/containers/RootContainer';
 
-import { initializeDataLayer } from './src/data/DataStore';
+const loggerMiddleware = createLogger();
 
-const store = createStore(AppState);
+const store = createStore(
+  AppState, 
+  undefined, // <- preloadedState? how is this different from AppState's default argument for state
+  applyMiddleware(
+    thunkMiddleware,
+    loggerMiddleware
+  )
+);
 
 class DressAppRoot extends React.Component {
   componentWillMount(){
-    initializeDataLayer();
+    store.dispatch(setClothingItems(Clothes));
   }
 
   render(){

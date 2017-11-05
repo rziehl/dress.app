@@ -2,31 +2,35 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 
-import { createFit } from '../state/Fits';
+import { createNewFit } from '../actions/FitActions';
 
 import AddFitPromptCard from '../components/app/AddFitPromptCard';
-import FitCreateCard from '../components/app/FitCreateCard';
+import FitCreateContainer from './FitCreateContainer';
 import FitItemSelectCard from '../components/app/FitItemSelectCard';
 
 class FitContainer extends Component {
   render(){
-    const { dispatch } = this.props;
-
     if (this.props.is_selecting){
       return <FitItemSelectCard/>
     } else if (this.props.is_creating){
-      return <FitCreateCard/>
+      return <FitCreateContainer/>
     }
 
-    return <AddFitPromptCard onPressHandler={createFit(dispatch)}/>
+    return <AddFitPromptCard onPressHandler={this.props.onAddFit}/>
   }
 }
 
 const mapStateToProps = (state, props) => {
   return {
-    is_creating: state.fit.form_for ? true : false,
-    is_selecting: state.clothing.filter ? true : false,
+    is_creating: state.fits.current ? true : false,
+    is_selecting: state.clothes.filter ? true : false,
   }
 }
 
-export default connect(mapStateToProps)(FitContainer);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onAddFit: () => { dispatch(createNewFit()) }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FitContainer);

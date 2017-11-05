@@ -1,4 +1,4 @@
-export const ClothingItem = {
+/*export const ClothingItem = {
   name: 'ClothingItem',
   primaryKey: 'id',
   properties: {
@@ -13,3 +13,4 @@ export const ClothingItem = {
     made_in: { type: 'string', optional: true },
   }
 };
+*/

@@ -1,4 +1,4 @@
-import * as ClothesUtil from '../util/ClothesUtil';
+import * as Clothes from '../models/ClothingItem';
 import type { ClothingItem } from '../models/ClothingItem';
 
 export default [
@@ -6,7 +6,7 @@ export default [
   /* outerwear */
 
   {
-    type: ClothesUtil.CLOTHES_TYPE_OUTERWEAR,
+    type: Clothes.TYPE_OUTERWEAR,
     name: 'Field Mechanic Jacket',
     color: 'Hillside Green',
     brand: 'JCrew',
@@ -17,7 +17,7 @@ export default [
     id: 1
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_OUTERWEAR,
+    type: Clothes.TYPE_OUTERWEAR,
     name: 'MA-1 Bomber Jacket',
     color: 'Vintage Navy',
     brand: 'Wallace & Barnes',
@@ -31,7 +31,7 @@ export default [
   /* sweaters */
 
   {
-    type: ClothesUtil.CLOTHES_TYPE_SWEATER,
+    type: Clothes.TYPE_SWEATER,
     name: 'Slub Zip 1x1 Hoodie',
     color: 'Heather Gray',
     brand: 'Wings + Horns',
@@ -42,7 +42,7 @@ export default [
     id: 3
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_SWEATER,
+    type: Clothes.TYPE_SWEATER,
     name: 'Brushed Fleece Hoodie',
     color: 'Marled Night',
     brand: 'JCrew',
@@ -56,7 +56,7 @@ export default [
   /* denim */
 
   {
-    type: ClothesUtil.CLOTHES_TYPE_DENIM,
+    type: Clothes.TYPE_DENIM,
     name: '770 Stretch Jeans',
     color: 'Indigo',
     brand: 'JCrew',
@@ -67,7 +67,7 @@ export default [
     id: 5
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_DENIM,
+    type: Clothes.TYPE_DENIM,
     name: '11oz Stretch Selvedge',
     color: 'Indigo',
     brand: 'Naked & Famous',
@@ -78,7 +78,7 @@ export default [
     id: 6
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_DENIM,
+    type: Clothes.TYPE_DENIM,
     name: 'Broken Elephant 6',
     color: 'Indigo',
     brand: 'Naked & Famous',
@@ -89,7 +89,7 @@ export default [
     id: 40
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_DENIM,
+    type: Clothes.TYPE_DENIM,
     name: 'Okayama Spirit 3',
     color: 'Indigo',
     brand: 'Naked & Famous',
@@ -103,7 +103,7 @@ export default [
   /* shirting */
 
   {
-    type: ClothesUtil.CLOTHES_TYPE_SHIRTING,
+    type: Clothes.TYPE_SHIRTING,
     name: 'Slim Lightweight Oxford',
     color: 'Classic Blue',
     brand: 'JCrew',
@@ -114,7 +114,7 @@ export default [
     id: 7
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_SHIRTING,
+    type: Clothes.TYPE_SHIRTING,
     name: 'Slim Lightweight Oxford',
     color: 'Classic Pink',
     brand: 'JCrew',
@@ -125,7 +125,7 @@ export default [
     id: 8
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_SHIRTING,
+    type: Clothes.TYPE_SHIRTING,
     name: 'Slim Lightweight Oxford',
     color: 'Lavender',
     brand: 'JCrew',
@@ -139,7 +139,7 @@ export default [
   /* tees */
 
   {
-    type: ClothesUtil.CLOTHES_TYPE_TEE,
+    type: Clothes.TYPE_TEE,
     name: 'Tall Garment Dyed Pocket Tee',
     color: 'White',
     brand: 'JCrew',
@@ -150,7 +150,7 @@ export default [
     id: 10
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_TEE,
+    type: Clothes.TYPE_TEE,
     name: 'Deck Striped Tee',
     color: 'Mountain White',
     brand: 'JCrew',
@@ -161,7 +161,7 @@ export default [
     id: 11
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_TEE,
+    type: Clothes.TYPE_TEE,
     name: 'Ringspun Jersey',
     color: 'Ice',
     brand: 'Reigning Champ',
@@ -172,7 +172,7 @@ export default [
     id: 38
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_TEE,
+    type: Clothes.TYPE_TEE,
     name: 'Broken In V-Neck',
     color: 'Heather Chrome',
     brand: 'JCrew',
@@ -183,7 +183,7 @@ export default [
     id: 39
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_TEE,
+    type: Clothes.TYPE_TEE,
     name: 'Broken In Crewneck',
     color: 'Heather Chrome',
     brand: 'JCrew',
@@ -194,7 +194,7 @@ export default [
     id: 12
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_TEE,
+    type: Clothes.TYPE_TEE,
     name: 'Gym Logo T-Shirt',
     color: 'Heather Grey',
     brand: 'Reigning Champ',
@@ -205,7 +205,7 @@ export default [
     id: 37
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_TEE,
+    type: Clothes.TYPE_TEE,
     name: 'Indigo Pocket Tee',
     color: 'Blue',
     brand: 'Wallace & Barnes',
@@ -216,7 +216,7 @@ export default [
     id: 13
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_TEE,
+    type: Clothes.TYPE_TEE,
     name: 'Broken In V-Neck',
     color: 'Warm Marled Sea',
     brand: 'JCrew',
@@ -227,7 +227,7 @@ export default [
     id: 14
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_TEE,
+    type: Clothes.TYPE_TEE,
     name: 'Slim Flagstone Pocket Tee',
     color: 'Heather Slate',
     brand: 'JCrew',
@@ -238,7 +238,7 @@ export default [
     id: 15
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_TEE,
+    type: Clothes.TYPE_TEE,
     name: 'Broken In V-Neck',
     color: 'Heather Navy',
     brand: 'JCrew',
@@ -249,7 +249,7 @@ export default [
     id: 16
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_TEE,
+    type: Clothes.TYPE_TEE,
     name: 'Indigo Pocket Tee',
     color: 'Navy',
     brand: 'Wallace & Barnes',
@@ -263,7 +263,7 @@ export default [
   /* pants */
 
   {
-    type: ClothesUtil.CLOTHES_TYPE_PANT,
+    type: Clothes.TYPE_PANT,
     name: 'Bowery Slim Irish Linen Pant',
     color: 'Crosshatch',
     brand: 'JCrew',
@@ -274,7 +274,7 @@ export default [
     id: 18
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_PANT,
+    type: Clothes.TYPE_PANT,
     name: 'Bowery Slim Cotton Pant',
     color: 'Fine Striped',
     brand: 'JCrew',
@@ -285,7 +285,7 @@ export default [
     id: 19
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_PANT,
+    type: Clothes.TYPE_PANT,
     name: 'Bowery Slim Irish Linen Pant',
     color: 'Mineral Grey',
     brand: 'JCrew',
@@ -296,7 +296,7 @@ export default [
     id: 20
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_PANT,
+    type: Clothes.TYPE_PANT,
     name: 'Broken In 484 Chino',
     color: 'River Brown',
     brand: 'JCrew',
@@ -307,7 +307,7 @@ export default [
     id: 21
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_PANT,
+    type: Clothes.TYPE_PANT,
     name: 'Bush Pant',
     color: 'Black',
     brand: 'Wings + Horns',
@@ -318,7 +318,7 @@ export default [
     id: 36
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_PANT,
+    type: Clothes.TYPE_PANT,
     name: 'Slim Sweatpant',
     color: 'Black',
     brand: 'Reigning Champ',
@@ -332,7 +332,7 @@ export default [
   /* shorts */
 
   {
-    type: ClothesUtil.CLOTHES_TYPE_SHORT,
+    type: Clothes.TYPE_SHORT,
     name: '9" Garment Dyed Cotton Stanton',
     color: 'British Khaki',
     brand: 'JCrew',
@@ -343,7 +343,7 @@ export default [
     id: 22
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_SHORT,
+    type: Clothes.TYPE_SHORT,
     name: '9" Irish Herringbone Linen Stanton',
     color: 'Grey Blue',
     brand: 'JCrew',
@@ -354,7 +354,7 @@ export default [
     id: 23
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_SHORT,
+    type: Clothes.TYPE_SHORT,
     name: '9" Irish Herringbone Linen Stanton',
     color: 'Sky Blue',
     brand: 'JCrew',
@@ -365,7 +365,7 @@ export default [
     id: 24
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_SHORT,
+    type: Clothes.TYPE_SHORT,
     name: '9" Irish Linen Stanton',
     color: 'Navy',
     brand: 'JCrew',
@@ -376,7 +376,7 @@ export default [
     id: 25
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_SHORT,
+    type: Clothes.TYPE_SHORT,
     name: '9" Seeded Canvas Stanton',
     color: 'Natural Sand',
     brand: 'JCrew',
@@ -387,7 +387,7 @@ export default [
     id: 26
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_SHORT,
+    type: Clothes.TYPE_SHORT,
     name: '10.5" Striped Irish Linen Club',
     color: 'Light Navy',
     brand: 'JCrew',
@@ -398,7 +398,7 @@ export default [
     id: 27
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_SHORT,
+    type: Clothes.TYPE_SHORT,
     name: 'Sweatshort',
     color: 'Navy',
     brand: 'Reigning Champ',
@@ -412,7 +412,7 @@ export default [
   /* footwear */
 
   {
-    type: ClothesUtil.CLOTHES_TYPE_FOOTWEAR,
+    type: Clothes.TYPE_FOOTWEAR,
     name: 'Alphabounce Engineered Mesh',
     color: 'Grey',
     brand: 'Adidas',
@@ -423,7 +423,7 @@ export default [
     id: 28
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_FOOTWEAR,
+    type: Clothes.TYPE_FOOTWEAR,
     name: 'Topsider Boat Shoe',
     color: 'Rustic Brown',
     brand: 'Sperry x JCrew',
@@ -434,7 +434,7 @@ export default [
     id: 29
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_FOOTWEAR,
+    type: Clothes.TYPE_FOOTWEAR,
     name: 'Bushacre 2 Boot',
     color: 'Beeswax',
     brand: 'Clark\'s',
@@ -445,7 +445,7 @@ export default [
     id: 30
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_FOOTWEAR,
+    type: Clothes.TYPE_FOOTWEAR,
     name: 'NEO Ralley Lo',
     color: 'White / Black',
     brand: 'Adidas',
@@ -456,7 +456,7 @@ export default [
     id: 31
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_FOOTWEAR,
+    type: Clothes.TYPE_FOOTWEAR,
     name: 'Nubuck Low Top Sneaker',
     color: 'Sand / White',
     brand: 'Wings + Horns',
@@ -467,7 +467,7 @@ export default [
     id: 32
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_FOOTWEAR,
+    type: Clothes.TYPE_FOOTWEAR,
     name: '1000 Mile Boot',
     color: 'Black',
     brand: 'Wolverine',
@@ -478,7 +478,7 @@ export default [
     id: 33
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_FOOTWEAR,
+    type: Clothes.TYPE_FOOTWEAR,
     name: 'Service Boot',
     color: 'Brown Chromexcel',
     brand: 'Viberg',
@@ -492,7 +492,7 @@ export default [
   /* belts */
 
   {
-    type: ClothesUtil.CLOTHES_TYPE_BELT,
+    type: Clothes.TYPE_BELT,
     name: 'Striped Cotton Web Belt',
     color: 'Rivington Blue Stripe',
     brand: 'JCrew',
@@ -503,7 +503,7 @@ export default [
     id: 34
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_BELT,
+    type: Clothes.TYPE_BELT,
     name: 'Stitched-Edge Belt',
     color: 'Dark Brown',
     brand: 'JCrew',
@@ -514,7 +514,7 @@ export default [
     id: 35
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_BELT,
+    type: Clothes.TYPE_BELT,
     name: 'Stitched-Edge Belt',
     color: 'Black',
     brand: 'JCrew',
@@ -525,7 +525,7 @@ export default [
     id: 36
   },
   {
-    type: ClothesUtil.CLOTHES_TYPE_BELT,
+    type: Clothes.TYPE_BELT,
     name: 'Standard Belt',
     color: 'Cognac',
     brand: 'Tanner Goods',

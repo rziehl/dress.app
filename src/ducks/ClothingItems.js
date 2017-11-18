@@ -1,4 +1,4 @@
-import type { ClothingCategory } from '../util/ClothesUtil';
+import type { ClothingCategory } from '../models/ClothingItem';
 import type { ClothingItem } from '../models/ClothingItem';
 
 // actions

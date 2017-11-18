@@ -10,7 +10,7 @@ import {
   View
 } from 'react-native';
 
-import type { ClothingCategory } from '../../util/ClothesUtil';
+import type { ClothingCategory } from '../../models/ClothingItem';
 
 type Props = {
   onPress: ?(category: ClothingCategory) => void,

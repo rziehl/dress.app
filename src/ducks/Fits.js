@@ -1,11 +1,4 @@
-// TODO: include babel-plugin-flow-runtime once it works with react-native
-// https://github.com/codemix/flow-runtime/issues/17
-// https://codemix.github.io/flow-runtime/#/docs/working-with-flow
-
-//import { reify } from 'flow-runtime';
-//import type { Type } from 'flow-runtime';
-
-import * as ClothesUtil from '../util/ClothesUtil';
+import * as Clothes from '../models/ClothingItem';
 import type { ClothingItem } from '../models/ClothingItem';
 import type { Fit } from '../models/Fit';
 
@@ -85,7 +78,7 @@ export const fits = (state: FitsState = initialFitsState, action : FitsAction) :
     case CREATE_NEW_FIT:
       return {
         ...state,
-        //current: (reify: Type<Fit>) // effectively new Fit()
+        //current: // TODO replace with a class in models/
         current: {
           outerwear: undefined,
           sweater: undefined,
@@ -100,15 +93,15 @@ export const fits = (state: FitsState = initialFitsState, action : FitsAction) :
       var fit = { ...state.current };
 
       switch (action.item.type) {
-        case ClothesUtil.CLOTHES_TYPE_OUTERWEAR: fit.outerwear = action.item; break;
-        case ClothesUtil.CLOTHES_TYPE_SWEATER: fit.sweater = action.item; break;
-        case ClothesUtil.CLOTHES_TYPE_SHIRTING: fit.shirt = action.item; break;
-        case ClothesUtil.CLOTHES_TYPE_TEE: fit.tee = action.item; break;
-        case ClothesUtil.CLOTHES_TYPE_PANT: fit.bottoms = action.item; break;
-        case ClothesUtil.CLOTHES_TYPE_DENIM: fit.bottoms = action.item; break;
-        case ClothesUtil.CLOTHES_TYPE_SHORT: fit.bottoms = action.item; break;
-        case ClothesUtil.CLOTHES_TYPE_BELT: fit.belt = action.item; break;
-        case ClothesUtil.CLOTHES_TYPE_FOOTWEAR: fit.footwear = action.item; break;
+        case Clothes.TYPE_OUTERWEAR: fit.outerwear = action.item; break;
+        case Clothes.TYPE_SWEATER: fit.sweater = action.item; break;
+        case Clothes.TYPE_SHIRTING: fit.shirt = action.item; break;
+        case Clothes.TYPE_TEE: fit.tee = action.item; break;
+        case Clothes.TYPE_PANT: fit.bottoms = action.item; break;
+        case Clothes.TYPE_DENIM: fit.bottoms = action.item; break;
+        case Clothes.TYPE_SHORT: fit.bottoms = action.item; break;
+        case Clothes.TYPE_BELT: fit.belt = action.item; break;
+        case Clothes.TYPE_FOOTWEAR: fit.footwear = action.item; break;
         default: break;
       }
 
@@ -120,15 +113,15 @@ export const fits = (state: FitsState = initialFitsState, action : FitsAction) :
       var fit = { ...state.current };
 
       switch (action.item.type) {
-        case ClothesUtil.CLOTHES_TYPE_OUTERWEAR: fit.outerwear = undefined; break;
-        case ClothesUtil.CLOTHES_TYPE_SWEATER: fit.sweater = undefined; break;
-        case ClothesUtil.CLOTHES_TYPE_SHIRTING: fit.shirt = undefined; break;
-        case ClothesUtil.CLOTHES_TYPE_TEE: fit.tee = undefined; break;
-        case ClothesUtil.CLOTHES_TYPE_PANT: fit.bottoms = undefined; break;
-        case ClothesUtil.CLOTHES_TYPE_DENIM: fit.bottoms = undefined; break;
-        case ClothesUtil.CLOTHES_TYPE_SHORT: fit.bottoms = undefined; break;
-        case ClothesUtil.CLOTHES_TYPE_BELT: fit.belt = undefined; break;
-        case ClothesUtil.CLOTHES_TYPE_FOOTWEAR: fit.footwear = undefined; break;
+        case Clothes.TYPE_OUTERWEAR: fit.outerwear = undefined; break;
+        case Clothes.TYPE_SWEATER: fit.sweater = undefined; break;
+        case Clothes.TYPE_SHIRTING: fit.shirt = undefined; break;
+        case Clothes.TYPE_TEE: fit.tee = undefined; break;
+        case Clothes.TYPE_PANT: fit.bottoms = undefined; break;
+        case Clothes.TYPE_DENIM: fit.bottoms = undefined; break;
+        case Clothes.TYPE_SHORT: fit.bottoms = undefined; break;
+        case Clothes.TYPE_BELT: fit.belt = undefined; break;
+        case Clothes.TYPE_FOOTWEAR: fit.footwear = undefined; break;
         default: break;
       }
 

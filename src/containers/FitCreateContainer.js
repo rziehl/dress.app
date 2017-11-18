@@ -23,6 +23,7 @@ import FitItemBlock from '../components/app/FitItemBlock';
 import { setClothingFilter } from '../ducks/ClothingItems';
 
 import * as ClothesUtil from '../util/ClothesUtil';
+import * as Clothes from '../models/ClothingItem';
 
 class FitCreateContainer extends Component {
   render() {
@@ -115,9 +116,9 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(mapStateToProps, mapDispatchToProps)(FitCreateContainer);
 
 function verifyFit(fit){
-  let hasShirt = fit[ClothesUtil.CLOTHES_CATEGORY_SHIRTING] || fit[ClothesUtil.CLOTHES_CATEGORY_TEE];
-  let hasPants = fit[ClothesUtil.CLOTHES_CATEGORY_BOTTOMS];
-  let hasShoes = fit[ClothesUtil.CLOTHES_CATEGORY_FOOTWEAR];
+  let hasShirt = fit[Clothes.CATEGORY_SHIRTING] || fit[Clothes.CATEGORY_TEE];
+  let hasPants = fit[Clothes.CATEGORY_BOTTOMS];
+  let hasShoes = fit[Clothes.CATEGORY_FOOTWEAR];
 
   return hasShirt && hasPants && hasShoes;
 }

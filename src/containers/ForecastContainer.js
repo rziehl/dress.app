@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 // --- APP INCLUDES ---
 
-import { getForecast } from '../thunks/ForecastThunks';
+import { getForecast } from '../state/Forecasts';
 
 import ActivityErrorCard from '../components/app/ActivityErrorCard';
 import ActivityIndicatorCard from '../components/app/ActivityIndicatorCard';

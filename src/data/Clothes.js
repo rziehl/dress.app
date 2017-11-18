@@ -1,4 +1,5 @@
 import * as ClothesUtil from '../util/ClothesUtil';
+import type { ClothingItem } from '../models/ClothingItem';
 
 export default [
 

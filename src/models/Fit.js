@@ -1,20 +1,15 @@
-/*export const Fit = {
-  name: 'Fit',
-  properties: {
+import type { ClothingItem } from './ClothingItem';
 
-    forecast: { type: 'Forecast' },
-    photo_uri: { type: 'string', optional: true },
+export type Fit = {
+  outerwear: ?ClothingItem,
+  sweater: ?ClothingItem,
+  shirt: ?ClothingItem,
+  tee: ?ClothingItem,
+  bottoms: ?ClothingItem,
+  belt: ?ClothingItem,
+  footwear: ?ClothingItem
 
-    outerwear_id: { type: 'int', optional: true },
-    sweater_id: { type: 'int', optional: true },
-    shirting_id: { type: 'int', optional: true },
-    tee_id: { type: 'int', optional: true },
-    denim_id: { type: 'int', optional: true },
-    pants_id: { type: 'int', optional: true },
-    shorts_id: { type: 'int', optional: true },
-    footwear_id: { type: 'int', optional: true },
-    belt_id: { type: 'int', optional: true }
-  }
-};*/
-
-// date:  'date',
+  // forecast
+  // photo uri
+  // date
+}

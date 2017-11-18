@@ -20,8 +20,8 @@ import CardItem from '../lib/CardItem';
 import SectionDivider from '../lib/SectionDivider';
 import ClothingItemRow from './ClothingItemRow';
 
-import { setClothingFilter } from '../../actions/ClothingActions';
-import { addItemToFit } from '../../actions/FitActions';
+import { setClothingFilter } from '../../state/ClothingItems';
+import { addItemToFit } from '../../state/Fits';
 
 import * as ClothesUtil from '../../util/ClothesUtil';
 

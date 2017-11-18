@@ -1,16 +1,13 @@
-/*export const ClothingItem = {
-  name: 'ClothingItem',
-  primaryKey: 'id',
-  properties: {
-    id: 'int',
-    type:  'string',
-    name: 'string',
-    color: 'string',
-    brand: 'string',
-    size: { type: 'string', optional: true },
-    image: 'string',
-    thumbnail: 'string',
-    made_in: { type: 'string', optional: true },
-  }
+import type { ClothingType } from '../util/ClothesUtil';
+
+export type ClothingItem = {
+  type: ClothingType,
+  name: string,
+  color: string,
+  brand: string,
+  size: string,
+  image: string,
+  thumbnail: string,
+  made_in: string,
+  id: number
 };
-*/

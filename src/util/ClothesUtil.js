@@ -8,6 +8,9 @@ export const CLOTHES_TYPE_SHORT = 'SHORT';
 export const CLOTHES_TYPE_FOOTWEAR = 'FOOTWEAR';
 export const CLOTHES_TYPE_BELT = 'BELT';
 
+// TODO: try find a way to avoid repeating the strings here
+export type ClothingType = 'OUTERWEAR' | 'SWEATER' | 'DENIM' | 'SHIRTING' | 'TEE' | 'PANT' | 'SHORT' | 'FOOTWEAR' | 'BELT';
+
 export const CLOTHES_CATEGORY_OUTERWEAR = 'OUTERWEAR';
 export const CLOTHES_CATEGORY_SWEATER = 'SWEATER';
 export const CLOTHES_CATEGORY_SHIRTING = 'SHIRT';
@@ -16,7 +19,10 @@ export const CLOTHES_CATEGORY_BELT = 'BELT';
 export const CLOTHES_CATEGORY_BOTTOMS = 'BOTTOMS';
 export const CLOTHES_CATEGORY_FOOTWEAR = 'FOOTWEAR';
 
-export const CLOTHES_CATEGORIES = [
+// TODO: try find a way to avoid repeating the strings here
+export type ClothingCategory = 'OUTERWEAR' | 'SWEATER' | 'SHIRT' | 'TEE' | 'BELT' | 'BOTTOMS' | 'FOOTWEAR';
+
+export const CLOTHES_CATEGORIES: ClothingCategory[] = [
   CLOTHES_CATEGORY_OUTERWEAR,
   CLOTHES_CATEGORY_SWEATER,
   CLOTHES_CATEGORY_SHIRTING,
@@ -52,10 +58,10 @@ const categoriesToIconsMap = {
   'FOOTWEAR': require('../../res/img/clothes_icons/shoe.png')
 };
 
-export function typeToCategory(type) {
+export function typeToCategory(type: ClothingType) {
   return typesToCategoriesMap[type];
 }
 
-export function iconForCategory(category) {
+export function iconForCategory(category: ClothingCategory) {
   return categoriesToIconsMap[category];
 }

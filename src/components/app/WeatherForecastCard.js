@@ -9,80 +9,84 @@ import {
 
 import Card from '../lib/Card';
 import CardItem from '../lib/CardItem';
+import type { Forecast } from '../../models/Forecast';
 
-export default class WeatherForecastCard extends Component {
-  render(){
-    const precipitationRow = this.props.forecast.pop > 0 ? (
+type Props = {
+  forecast: Forecast,
+  minimized: boolean
+}
+
+export default function WeatherForecastCard(props: Props) {
+  const precipitationRow = props.forecast.pop > 0 ? (
+    <CardItem style={styles.detailsItem}>
+      <View style={styles.textContainer}>
+        <Text style={styles.detailsText}>PRECIPITATION</Text>
+        <Text style={styles.locationText}>{props.forecast.pop}%</Text>
+      </View>
+    </CardItem>
+  ) : undefined;
+
+  const detailedForecast = props.minimized ? undefined : (
+    <View>
       <CardItem style={styles.detailsItem}>
         <View style={styles.textContainer}>
-          <Text style={styles.detailsText}>PRECIPITATION</Text>
-          <Text style={styles.locationText}>{this.props.forecast.pop}%</Text>
+          <Text style={styles.detailsText}>HIGH</Text>
+          <Text style={styles.locationText}>{props.forecast.high}°C</Text>
         </View>
       </CardItem>
-    ) : undefined;
+      <CardItem style={styles.detailsItem}>
+        <View style={styles.textContainer}>
+          <Text style={styles.detailsText}>LOW</Text>
+          <Text style={styles.locationText}>{props.forecast.low}°C</Text>
+        </View>
+      </CardItem>
+      <CardItem style={styles.detailsItem}>
+        <View style={styles.textContainer}>
+          <Text style={styles.detailsText}>AVG. WIND</Text>
+          <Text style={styles.locationText}>{props.forecast.avg_wind}KM/H</Text>
+        </View>
+      </CardItem>
 
-    const detailedForecast = this.props.minimized ? undefined : (
-      <View>
-        <CardItem style={styles.detailsItem}>
-          <View style={styles.textContainer}>
-            <Text style={styles.detailsText}>HIGH</Text>
-            <Text style={styles.locationText}>{this.props.forecast.high}°C</Text>
-          </View>
-        </CardItem>
-        <CardItem style={styles.detailsItem}>
-          <View style={styles.textContainer}>
-            <Text style={styles.detailsText}>LOW</Text>
-            <Text style={styles.locationText}>{this.props.forecast.low}°C</Text>
-          </View>
-        </CardItem>
-        <CardItem style={styles.detailsItem}>
-          <View style={styles.textContainer}>
-            <Text style={styles.detailsText}>AVG. WIND</Text>
-            <Text style={styles.locationText}>{this.props.forecast.avg_wind}KM/H</Text>
-          </View>
-        </CardItem>
+      {precipitationRow}
 
-        {precipitationRow}
+      <CardItem style={styles.detailsItem}>
+        <View style={styles.textContainer}>
+          <Text style={styles.detailsText}>HUMIDITY</Text>
+          <Text style={styles.locationText}>{props.forecast.humidity}%</Text>
+        </View>
+      </CardItem>
 
-        <CardItem style={styles.detailsItem}>
-          <View style={styles.textContainer}>
-            <Text style={styles.detailsText}>HUMIDITY</Text>
-            <Text style={styles.locationText}>{this.props.forecast.humidity}%</Text>
-          </View>
-        </CardItem>
+      <CardItem style={styles.detailsItemLast}>
+        <View style={styles.logoContainer}>
+          <Text style={styles.attributionText}>POWERED BY</Text>
+          <Image
+            resizeMode={Image.resizeMode.contain}
+            source={require('../../../res/img/wundergroundLogo_4c_horz.png')}
+            style={styles.logoImage}
+          />
+        </View>
+      </CardItem>
+    </View>
+  );
 
-        <CardItem style={styles.detailsItemLast}>
-          <View style={styles.logoContainer}>
-            <Text style={styles.attributionText}>POWERED BY</Text>
-            <Image
-              resizeMode={Image.resizeMode.contain}
-              source={require('../../../res/img/wundergroundLogo_4c_horz.png')}
-              style={styles.logoImage}
-            />
-          </View>
-        </CardItem>
-      </View>
-    );
+  return (
+    <Card>
+      <CardItem>
+        <View style={[styles.textContainer, styles.headerContainer]}>
+          <Text style={styles.temperatureText}>{props.forecast.temperature}°C</Text>
+        </View>
+      </CardItem>
 
-    return (
-      <Card>
-        <CardItem>
-          <View style={[styles.textContainer, styles.headerContainer]}>
-            <Text style={styles.temperatureText}>{this.props.forecast.temperature}°C</Text>
-          </View>
-        </CardItem>
+      <CardItem>
+        <View style={[styles.textContainer, styles.subheaderContainer]}>
+          <Text style={styles.conditionsText}>{props.forecast.weather} in {props.forecast.city}</Text>
+        </View>
+      </CardItem>
 
-        <CardItem>
-          <View style={[styles.textContainer, styles.subheaderContainer]}>
-            <Text style={styles.conditionsText}>{this.props.forecast.weather} in {this.props.forecast.city}</Text>
-          </View>
-        </CardItem>
+      { detailedForecast }
 
-        { detailedForecast }
-
-      </Card>
-    );
-  }
+    </Card>
+  );
 }
 
 const styles = StyleSheet.create({

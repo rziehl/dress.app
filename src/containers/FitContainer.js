@@ -6,7 +6,7 @@ import { createNewFit } from '../ducks/Fits';
 
 import AddFitPromptCard from '../components/app/AddFitPromptCard';
 import FitCreateContainer from './FitCreateContainer';
-import FitItemSelectCard from '../components/app/FitItemSelectCard';
+import FitItemSelectCard from './FitItemSelectContainer';
 
 class FitContainer extends Component {
   render(){

@@ -10,14 +10,16 @@ import Button from '../lib/Button';
 import Card from '../lib/Card';
 import CardItem from '../lib/CardItem';
 
-export default class AddFitPromptCard extends Component {
-  render(){
-    return (
-      <Card>
-        <CardItem>
-          <Button text="ADD A FIT" onPress={this.props.onPressHandler} />
-        </CardItem>
-      </Card>
-    );
-  }
+type Props = {
+  onPressHandler: ?() => void
+}
+
+export default function AddFitPromptCard(props: Props) {
+  return (
+    <Card>
+      <CardItem>
+        <Button text="ADD A FIT" onPress={props.onPressHandler} />
+      </CardItem>
+    </Card>
+  );
 }

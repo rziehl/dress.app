@@ -14,23 +14,22 @@ import { connect } from 'react-redux';
 
 // --- APP INCLUDES ---
 
-import Button from '../lib/Button';
-import Card from '../lib/Card';
-import CardItem from '../lib/CardItem';
-import SectionDivider from '../lib/SectionDivider';
-import ClothingItemRow from './ClothingItemRow';
+import Button from '../components/lib/Button';
+import Card from '../components/lib/Card';
+import CardItem from '../components/lib/CardItem';
+import SectionDivider from '../components/lib/SectionDivider';
+import ClothingItemRow from '../components/app/ClothingItemRow';
 
-import { setClothingFilter } from '../../ducks/ClothingItems';
-import { addItemToFit } from '../../ducks/Fits';
+import { setClothingFilter } from '../ducks/ClothingItems';
+import { addItemToFit } from '../ducks/Fits';
 
-import * as ClothesUtil from '../../util/ClothesUtil';
+import * as ClothesUtil from '../util/ClothesUtil';
 
-// TODO: this should be a container
 // TODO: this should use a proper listview for performance
 // TODO: this should allow for rows to deselected
 // TODO: ClothingItemRows should show some visual indication they are selected
 
-class FitItemSelectCard extends Component {
+class FitItemSelectContainer extends Component {
   render() {
     let itemRows = this.props.clothes.map((clothing_item, index) => {
       return (
@@ -84,7 +83,7 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(FitItemSelectCard);
+export default connect(mapStateToProps, mapDispatchToProps)(FitItemSelectContainer);
 
 const styles = StyleSheet.create({
   backButton: {

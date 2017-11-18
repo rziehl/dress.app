@@ -27,5 +27,6 @@ export type Forecast = {
   avg_wind: number,
   pop: number,
   humidity: number,
-  icon: string
+  icon: string,
+  weather: string
 }

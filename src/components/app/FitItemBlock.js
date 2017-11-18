@@ -9,18 +9,23 @@ import {
   View
 } from 'react-native';
 
-export default class FitItemBlock extends Component {
-  render() {
-    return (
-      <TouchableOpacity onPress={this.props.onPress}>
-        <View style={styles.block}>
-          <View style={styles.blockContent}>
-            <Image source={this.props.thumbnail} style={styles.avatar}/>
-          </View>
+import type { ClothingCategory } from '../../util/ClothesUtil';
+
+type Props = {
+  onPress: ?(category: ClothingCategory) => void,
+  thumbnail: any,
+}
+
+export default function FitItemBlock(props: Props) {
+  return (
+    <TouchableOpacity onPress={props.onPress}>
+      <View style={styles.block}>
+        <View style={styles.blockContent}>
+          <Image source={props.thumbnail} style={styles.avatar}/>
         </View>
-      </TouchableOpacity>
-    );
-  }
+      </View>
+    </TouchableOpacity>
+  );
 }
 
 // css that should be revisited

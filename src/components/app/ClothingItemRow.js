@@ -10,9 +10,17 @@ import {
   View
 } from 'react-native';
 
-// refactor to know nothing about clothing items
+import type { ClothingItem } from '../../models/ClothingItem';
 
-export default function ClothingItemRow(props) {
+// TODO: refactor to know nothing about clothing items
+
+type Props = {
+  index: number,
+  clothing_item: ClothingItem,
+  onPress: ?(item: ClothingItem) => void
+}
+
+export default function ClothingItemRow(props: Props) {
   return (
     <TouchableOpacity onPress={props.onPress} key={'clothing_item_' + props.index}>
       <View style={styles.clothingItemRow}>

@@ -10,21 +10,27 @@ import {
   View
 } from 'react-native';
 
-export default class FitCategoryBlock extends Component {
-  render() {
-    return (
-      <TouchableOpacity onPress={this.props.onPress}>
-        <View style={styles.block}>
-          <View style={styles.blockContent}>
-            <Image source={this.props.thumbnail} style={styles.thumbnail}/>
-            <View style={styles.textContainer}>
-              <Text style={styles.categoryTitle}>{this.props.category.toUpperCase()}</Text>
-            </View>
+import type { ClothingCategory } from '../../util/ClothesUtil';
+
+type Props = {
+  onPress: ?(category: ClothingCategory) => void,
+  thumbnail: any,
+  category: string
+}
+
+export default function FitCategoryBlock(props: Props) {
+  return (
+    <TouchableOpacity onPress={props.onPress}>
+      <View style={styles.block}>
+        <View style={styles.blockContent}>
+          <Image source={props.thumbnail} style={styles.thumbnail}/>
+          <View style={styles.textContainer}>
+            <Text style={styles.categoryTitle}>{props.category.toUpperCase()}</Text>
           </View>
         </View>
-      </TouchableOpacity>
-    );
-  }
+      </View>
+    </TouchableOpacity>
+  );
 }
 
 // css that should be revisited

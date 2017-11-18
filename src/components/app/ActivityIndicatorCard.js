@@ -10,23 +10,26 @@ import {
 import Card from '../lib/Card';
 import CardItem from '../lib/CardItem';
 
-export default class ActivityIndicatorCard extends Component {
-  render(){
-    return (
-      <Card>
-        <CardItem>
-          <View style={styles.centerContent}>
-            <ActivityIndicator color={this.props.indicatorColor} size={64}/>
-          </View>
-        </CardItem>
-        <CardItem>
-          <View style={styles.centerContent}>
-            <Text style={styles.statusText}>{this.props.statusText}</Text>
-          </View>
-        </CardItem>
-      </Card>
-    );
-  }
+type Props = {
+  indicatorColor: string,
+  statusText: string
+}
+
+export default function ActivityIndicatorCard(props: Props) {
+  return (
+    <Card>
+      <CardItem>
+        <View style={styles.centerContent}>
+          <ActivityIndicator color={props.indicatorColor} size={64}/>
+        </View>
+      </CardItem>
+      <CardItem>
+        <View style={styles.centerContent}>
+          <Text style={styles.statusText}>{props.statusText}</Text>
+        </View>
+      </CardItem>
+    </Card>
+  );
 }
 
 const styles = StyleSheet.create({

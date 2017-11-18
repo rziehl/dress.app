@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 // --- APP INCLUDES ---
 
-import { getGeolocation } from '../state/Geolocations';
+import { getGeolocation } from '../ducks/Geolocations';
 
 import ActivityErrorCard from '../components/app/ActivityErrorCard';
 import ActivityIndicatorCard from '../components/app/ActivityIndicatorCard';

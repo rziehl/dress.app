@@ -12,8 +12,8 @@ import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 
 import Clothes from './src/data/Clothes';
-import { AppState } from './src/state/AppState';
-import { setClothingItems } from './src/state/ClothingItems';
+import { AppState } from './src/ducks/AppState';
+import { setClothingItems } from './src/ducks/ClothingItems';
 
 import RootContainer from './src/containers/RootContainer';
 

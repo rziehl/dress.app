@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 
-import { createNewFit } from '../state/Fits';
+import { createNewFit } from '../ducks/Fits';
 
 import AddFitPromptCard from '../components/app/AddFitPromptCard';
 import FitCreateContainer from './FitCreateContainer';

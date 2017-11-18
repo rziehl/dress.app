@@ -20,7 +20,7 @@ import SectionDivider from '../components/lib/SectionDivider';
 import FitCategoryBlock from '../components/app/FitCategoryBlock';
 import FitItemBlock from '../components/app/FitItemBlock';
 
-import { setClothingFilter } from '../state/ClothingItems';
+import { setClothingFilter } from '../ducks/ClothingItems';
 
 import * as ClothesUtil from '../util/ClothesUtil';
 

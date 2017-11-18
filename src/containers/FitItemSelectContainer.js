@@ -24,6 +24,8 @@ import { setClothingFilter } from '../ducks/ClothingItems';
 import { addItemToFit } from '../ducks/Fits';
 
 import * as ClothesUtil from '../util/ClothesUtil';
+import type { ClothingItem } from '../models/ClothingItem';
+import type { ClothingCategory } from '../models/ClothingItem';
 
 // TODO: this should use a proper listview for performance
 // TODO: this should allow for rows to deselected
@@ -64,7 +66,7 @@ class FitItemSelectContainer extends Component {
   }
 }
 
-function filterClothes(clothes, category) {
+function filterClothes(clothes: ClothingItem[], category: ClothingCategory) {
   return clothes.filter((item) => {
     return ClothesUtil.typeToCategory(item.type) === category
   });

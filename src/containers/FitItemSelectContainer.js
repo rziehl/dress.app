@@ -34,14 +34,12 @@ import type { ClothingCategory } from '../models/ClothingItem';
 class FitItemSelectContainer extends Component {
   render() {
     let itemRows = this.props.clothes.map((clothing_item, index) => {
-      return (
-        <ClothingItemRow 
-          key={'clothing_item_row_' + index}
-          onPress={this.props.onItemPress.bind(this, clothing_item)}
-          clothing_item={clothing_item}
-          index={index}
-        />
-      );
+      return ClothingItemRow({
+        key: 'clothing_item_row_' + index,
+        onPress: this.props.onItemPress.bind(this, clothing_item),
+        clothing_item: clothing_item,
+        index: index
+      });
     });
 
     // TODO: textContainer and sectionHeaderContainer can be combined

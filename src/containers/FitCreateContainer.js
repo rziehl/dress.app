@@ -28,6 +28,7 @@ import * as Clothes from '../models/ClothingItem';
 import type { ClothingItem } from '../models/ClothingItem';
 import type { ClothingCategory } from '../models/ClothingItem';
 import type { Fit } from '../models/Fit';
+import { getFitItemForCategory } from '../util/FitUtil';
 
 class FitCreateContainer extends Component {
   render() {
@@ -44,7 +45,7 @@ class FitCreateContainer extends Component {
 
     const topCategoryBlocks = topCategoryRow.map((category) => {
       return this.createCategoryBlock(
-        this.props.fit[category],
+        getFitItemForCategory(this.props.fit, category),
         category,
         ClothesUtil.iconForCategory(category)
       )
@@ -52,7 +53,7 @@ class FitCreateContainer extends Component {
 
     const bottomCategoryBlocks = bottomCategoryRow.map((category) => {
       return this.createCategoryBlock(
-        this.props.fit[category],
+        getFitItemForCategory(this.props.fit, category),
         category,
         ClothesUtil.iconForCategory(category)
       )

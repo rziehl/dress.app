@@ -90,7 +90,7 @@ export const fits = (state: FitsState = initialFitsState, action : FitsAction) :
         }
       }
     case ADD_ITEM_TO_FIT:
-      var fit = { ...state.current };
+      var fit: Fit = state.current;
 
       switch (action.item.type) {
         case Clothes.TYPE_OUTERWEAR: fit.outerwear = action.item; break;
@@ -110,7 +110,7 @@ export const fits = (state: FitsState = initialFitsState, action : FitsAction) :
         current: fit
       }
     case REMOVE_ITEM_FROM_FIT: {
-      var fit = { ...state.current };
+      var fit: Fit = state.current;
 
       switch (action.item.type) {
         case Clothes.TYPE_OUTERWEAR: fit.outerwear = undefined; break;

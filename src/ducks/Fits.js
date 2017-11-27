@@ -61,7 +61,7 @@ export const addFit = (fit: Fit) : AddFitAction => {
 
 // state
 
-type FitsState = {
+export type FitsState = {
   current: ?Fit,
   fits: Fit[],
 }

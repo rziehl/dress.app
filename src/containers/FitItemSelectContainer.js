@@ -72,7 +72,7 @@ function filterClothes(clothes: ClothingItem[], category: ClothingCategory) {
 
 const mapStateToProps = (state, props) => {
   return {
-    clothes: filterClothes(state.clothes.items, state.clothes.filter),
+    clothes: filterClothes(state.current.clothes.items, state.current.clothes.filter),
   }
 }
 

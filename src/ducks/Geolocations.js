@@ -80,7 +80,7 @@ export const getGeolocation = () => {
 
 // state
 
-type GeolocationState = {
+export type GeolocationState = {
   isFetching: boolean,
   current: ?Geolocation,
   positions: Geolocation[],

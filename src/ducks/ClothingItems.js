@@ -36,7 +36,7 @@ export const setClothingFilter = (filter: ?string) : SetClothingFilterAction => 
 
 // state
 
-type ClothesState = {
+export type ClothesState = {
   items: ClothingItem[],
   filter: ?string,
 }

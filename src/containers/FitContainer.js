@@ -22,8 +22,8 @@ class FitContainer extends Component {
 
 const mapStateToProps = (state, props) => {
   return {
-    is_creating: state.fits.current ? true : false,
-    is_selecting: state.clothes.filter ? true : false,
+    is_creating: state.current.fits.current ? true : false,
+    is_selecting: state.current.clothes.filter ? true : false,
   }
 }
 

@@ -27,8 +27,8 @@ class GeolocationContainer extends Component {
 
 const mapStateToProps = (state, props) => {
   return {
-    gps_position: state.geolocations.current,
-    error: state.geolocations.error
+    gps_position: state.current.geolocations.current,
+    error: state.current.geolocations.error
   }
 }
 

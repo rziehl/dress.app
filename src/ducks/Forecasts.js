@@ -89,7 +89,7 @@ export const getForecast = (position: Geolocation) => {
 
 // state
 
-type ForecastState = {
+export type ForecastState = {
   isFetching: boolean,
   current: ?Forecast,
   forecasts: Forecast[],

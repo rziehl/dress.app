@@ -30,10 +30,10 @@ class ForecastContainer extends Component {
 
 const mapStateToProps = (state, props) => {
   return {
-    position: state.geolocations.current,
-    forecast: state.forecasts.current,
-    error: state.forecasts.error,
-    should_shrink: state.fits.current ? true : false,
+    position: state.current.geolocations.current,
+    forecast: state.current.forecasts.current,
+    error: state.current.forecasts.error,
+    should_shrink: state.current.fits.current ? true : false,
   }
 }
 

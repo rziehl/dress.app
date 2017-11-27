@@ -17,10 +17,12 @@ import { setClothingItems } from './src/ducks/ClothingItems';
 
 import RootContainer from './src/containers/RootContainer';
 
+import { HigherOrderStateRewinder } from './src/ducks/AppState';
+
 const loggerMiddleware = createLogger();
 
 const store = createStore(
-  AppState, 
+  HigherOrderStateRewinder(AppState), 
   undefined, // <- preloadedState? how is this different from AppState's default argument for state
   applyMiddleware(
     thunkMiddleware,

@@ -107,8 +107,8 @@ class FitCreateContainer extends Component {
 
 const mapStateToProps = (state, props) => {
   return {
-    fit: state.fits.current,
-    isValid: verifyFit(state.fits.current)
+    fit: state.current.fits.current,
+    isValid: verifyFit(state.current.fits.current)
   }
 }
 

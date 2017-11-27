@@ -22,6 +22,7 @@
     "babel-plugin-flow-runtime": "^0.15.0",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react-native": "1.9.2",
+    "deep-freeze": "0.0.1",
     "flow-bin": "^0.46.0",
     "jest": "20.0.1",
     "react-test-renderer": "16.0.0-alpha.6"

@@ -3,8 +3,8 @@ import type { ClothingItem } from '../models/ClothingItem';
 
 // actions
 
-const SET_CLOTHING_ITEMS = 'SET_CLOTHING_ITEMS';
-const SET_CLOTHING_FILTER = 'SET_CLOTHING_FILTER';
+export const SET_CLOTHING_ITEMS = 'SET_CLOTHING_ITEMS';
+export const SET_CLOTHING_FILTER = 'SET_CLOTHING_FILTER';
 
 type SetClothingItemsAction = {
   type: typeof SET_CLOTHING_ITEMS,

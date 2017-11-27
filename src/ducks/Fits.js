@@ -4,10 +4,10 @@ import type { Fit } from '../models/Fit';
 
 // actions
 
-const CREATE_NEW_FIT = 'CREATE_NEW_FIT';
-const ADD_ITEM_TO_FIT = 'ADD_ITEM_TO_FIT';
-const REMOVE_ITEM_FROM_FIT = 'REMOVE_ITEM_FROM_FIT';
-const ADD_FIT = 'ADD_FIT';
+export const CREATE_NEW_FIT = 'CREATE_NEW_FIT';
+export const ADD_ITEM_TO_FIT = 'ADD_ITEM_TO_FIT';
+export const REMOVE_ITEM_FROM_FIT = 'REMOVE_ITEM_FROM_FIT';
+export const ADD_FIT = 'ADD_FIT';
 
 type CreateNewFitAction = {
   type: typeof CREATE_NEW_FIT
@@ -90,7 +90,7 @@ export const fits = (state: FitsState = initialFitsState, action : FitsAction) :
         }
       }
     case ADD_ITEM_TO_FIT:
-      var fit: Fit = state.current;
+      var fit: Fit = Object.assign({}, state.current);
 
       switch (action.item.type) {
         case Clothes.TYPE_OUTERWEAR: fit.outerwear = action.item; break;
@@ -110,7 +110,7 @@ export const fits = (state: FitsState = initialFitsState, action : FitsAction) :
         current: fit
       }
     case REMOVE_ITEM_FROM_FIT: {
-      var fit: Fit = state.current;
+      var fit: Fit = Object.assign({}, state.current);
 
       switch (action.item.type) {
         case Clothes.TYPE_OUTERWEAR: fit.outerwear = undefined; break;
@@ -133,6 +133,7 @@ export const fits = (state: FitsState = initialFitsState, action : FitsAction) :
     case ADD_FIT:
       return {
         ...state,
+        current: undefined,
         fits: state.fits.concat([action.fit])
       }
     default:
